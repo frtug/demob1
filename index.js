@@ -18,7 +18,7 @@ const io = socketIo(server,{
 });
 // TODO to handle cors
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 
 app.use(cors());
