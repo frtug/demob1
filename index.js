@@ -18,7 +18,7 @@ const io = socketIo(server,{
 });
 // TODO to handle cors
 
-const PORT = 80;
+const PORT = 5000;
 
 
 app.use(cors());
@@ -58,9 +58,14 @@ function verifyToken(req,res,next){
   }
   next()
 }
+function handleLimiting(req,res,next){
+  // create your o
+  // token vs leaky 
 
+  // 
+}
 
-
+app.use(handleLimiting)
 
 
 app.get("/",(req,res,next)=>{
@@ -134,3 +139,7 @@ io.on('connection',(socket)=>{
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+
+// Rate Limiting 
+// Token bucket vs Leaky Bucket 
