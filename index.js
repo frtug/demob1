@@ -18,7 +18,7 @@ const io = socketIo(server,{
 });
 // TODO to handle cors
 
-const PORT = process.env.PORT || 5000;
+const PORT = 80;
 
 
 app.use(cors());
@@ -132,5 +132,5 @@ io.on('connection',(socket)=>{
 
 // Start server
 server.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
