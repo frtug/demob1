@@ -10,12 +10,7 @@ const jwt = require('jsonwebtoken')
 const app = express();
 const server = createServer(app);
 
-const io = socketIo(server,{
-  cors:{
-    origin:'*', // react frontend
-    methods:['GET',"POST"]
-  }
-});
+const io = socketIo(server)
 // TODO to handle cors
 
 const PORT = 5000;
@@ -58,14 +53,14 @@ function verifyToken(req,res,next){
   }
   next()
 }
-function handleLimiting(req,res,next){
-  // create your o
-  // token vs leaky 
+// function handleLimiting(req,res,next){
+//   // create your o
+//   // token vs leaky 
 
-  // 
-}
+//   // 
+// }
 
-app.use(handleLimiting)
+// app.use(handleLimiting)
 
 
 app.get("/",(req,res,next)=>{
